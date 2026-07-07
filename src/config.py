@@ -15,7 +15,7 @@ DASHBOARD_PATH = OUTPUT_DIR / "dashboard.html"
 for _d in (OUTPUT_DIR, CHARTS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
-# 数据截止年份：作者 2023 年 6 月毕业，分析窗口仅保留其毕业时可获得的公开数据（≤2022）。
+# 数据截止年份：分析窗口内的公开数据范围（≤2022）。
 CUTOFF_YEAR = 2022
 
 # ---------- 中文字体 ----------

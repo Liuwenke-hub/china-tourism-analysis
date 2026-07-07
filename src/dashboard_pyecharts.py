@@ -323,7 +323,7 @@ def main():
         page.add(c)
     page.render(str(DASHBOARD_PATH))
 
-    # 注入标题与旅游管理视角解读
+    # 注入标题与行业视角解读
     _inject_header()
     print(f"\n✅ 仪表盘已生成：{DASHBOARD_PATH}（共 {len(charts)} 张交互图表）")
 
@@ -339,7 +339,7 @@ def _inject_header():
   </p>
   <p style="background:#f3f7f9;border-left:4px solid #1f6f8b;padding:10px 14px;
             color:#333;font-size:13px;line-height:1.7;margin:0 0 6px;">
-    <b>旅游管理视角解读：</b>数据清晰呈现「收入增长→旅游消费升级」的正向传导，以及 2020–2022 年疫情对
+    <b>行业视角解读：</b>数据清晰呈现「收入增长→旅游消费升级」的正向传导，以及 2020–2022 年疫情对
     国内游的断崖式冲击与持续承压（2022 年再度同比 -22%）；区域上东部沿海在旅游外汇收入上显著领先，印证目的地
     资源禀赋与基础设施的门槛效应。这为文旅目的地运营、客源结构优化与淡旺季调度提供了量化依据。
   </p>

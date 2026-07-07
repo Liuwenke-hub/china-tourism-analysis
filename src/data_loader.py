@@ -74,7 +74,7 @@ def process_dataframe(key: str, df: pd.DataFrame) -> pd.DataFrame | None:
             df.dropna(subset=["Date"], inplace=True)
             df["Year"] = df["Date"].dt.year
             df["Month"] = df["Date"].dt.month
-            df = df[df["Year"] <= CUTOFF_YEAR]   # 仅保留毕业前可得数据
+            df = df[df["Year"] <= CUTOFF_YEAR]   # 仅保留分析窗口内数据
             rename_map = {}
             for col in df.columns:
                 if "游客" in str(col) or "总人数" in str(col):
@@ -153,7 +153,7 @@ def process_dataframe(key: str, df: pd.DataFrame) -> pd.DataFrame | None:
     dedup_keys = [c for c in ("Province", "Indicator", "Year") if c in melted.columns]
     melted = melted.drop_duplicates(subset=dedup_keys, keep="first")
 
-    # 仅保留毕业前可获得的公开数据（≤ CUTOFF_YEAR），保证时间线自洽
+    # 仅保留分析窗口内数据（≤ CUTOFF_YEAR）
     melted = melted[melted["Year"] <= CUTOFF_YEAR]
 
     sort_by = ["Year", "Province"] if "Province" in melted.columns else (
