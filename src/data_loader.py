@@ -9,7 +9,7 @@
 
 数据源说明：所有 Excel 均来自公开的宏观经济与旅游行业统计年鉴/公报
 （国家统计局、文化和旅游部），海南专题来自海南省旅游和文化广电体育厅
-公开月度统计；原始网页文本存于 data/shuj.txt，由 parse_hainan_raw() 解析。
+公开月度统计；原始网页文本存于 data/hainan_raw_source.txt，由 parse_hainan_raw() 解析。
 """
 from pathlib import Path
 import re
@@ -215,11 +215,11 @@ def get_national_indicator(processed: dict, df_name: str, substrings: list[str])
 
 
 def parse_hainan_raw(path: str | Path | None = None) -> pd.DataFrame:
-    """ETL：从海南省旅文厅公开网页原始文本(shuj.txt)解析月度旅游统计。
+    """ETL：从海南省旅文厅公开网页原始文本(hainan_raw_source.txt)解析月度旅游统计。
 
     返回列：月份, 接待游客总人数（万人次）, 旅游总收入（亿元）
     """
-    path = Path(path) if path else DATA_DIR / "shuj.txt"
+    path = Path(path) if path else DATA_DIR / "hainan_raw_source.txt"
     if not path.exists():
         return pd.DataFrame()
     text = path.read_text(encoding="utf-8")
