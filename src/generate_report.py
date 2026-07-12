@@ -9,7 +9,6 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from config import OUTPUT_DIR, CHARTS_DIR
 
-AUTHOR = "数据分析项目组"                     # 报告署名
 YEAR_RANGE = "2005–2022"
 
 doc = Document()
@@ -66,7 +65,7 @@ for _ in range(4):
     doc.add_paragraph()
 info = doc.add_paragraph()
 info.alignment = WD_ALIGN_PARAGRAPH.CENTER
-info.add_run(f"作者：{AUTHOR}\n数据范围：{YEAR_RANGE}\n").font.size = Pt(12)
+info.add_run(f"数据范围：{YEAR_RANGE}\n").font.size = Pt(12)
 
 doc.add_page_break()
 

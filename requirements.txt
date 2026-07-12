@@ -4,3 +4,4 @@ matplotlib>=3.8
 seaborn>=0.13
 openpyxl>=3.1
 pyecharts>=2.0
+python-docx>=0.8
